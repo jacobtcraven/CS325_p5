@@ -41,7 +41,7 @@ python3 run.py
 ```
 
 ## How to create a LLM API:
-1. Create an OpenAI account
+1. Create an OpenAI account at www.openai.com
 
 2. Navigate to the API Keys tab on the sidebar
 
@@ -52,10 +52,11 @@ python3 run.py
 
 5. Define a string variable that contains your API key
 
-6. Send API key to openAI agent with this code block:
+6. Connect API key to openAI agent with this code block:
 ```
 openai.api_key = sr_key
 ```
+    
     a. replace "sr_key" with whatever you named your API key string variable.
 
 7. Determine how you will implement the API and then start by creating a list of dictionaries such as:
@@ -63,6 +64,7 @@ openai.api_key = sr_key
 messages = [ {"role": "system", "content": 
 			"You are a intelligent assistant."} ] 
 ```
+    
     a. In this example, "role" is defined as "system" but three different values can be used instead of "system".
         I. *system*: This sets up how the API should interact
         
@@ -93,6 +95,7 @@ messages = [ {"role": "system", "content":
         ## Seperate the summary from other returned data
         reply = chat.choices[0].message.content 
 ```
+    
     a. The lines 
     ```
     chat = openai.ChatCompletion.create( 
