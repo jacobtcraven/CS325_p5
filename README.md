@@ -132,9 +132,11 @@ __Module_1__: This folder contains the __RawData.py__ file which contains the fu
 
 __Module_2__: This folder contains the __FormatData.py__ file which contains the functions for retrieving the article title, removing html tags, and adding newlines to a string.
 
+__Other__: This folder contains the conda environment yml file, __urls.txt__ file, and the python file __sk.py__ containing the API key.
+
 __urls.txt__: This file contains the five URLs that will be scraped in main.py.
 
-__key.txt__: This file contains the API key to be used with OpenAI's API.
+__sk.py__: This file contains the API key to be used with OpenAI's API.
 
 ------------------------------------------------------------------------------------------------------------
 

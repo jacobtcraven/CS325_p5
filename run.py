@@ -6,14 +6,14 @@ from module_2.FormatData import FormatData
 
 ## Import openai and api key
 import openai
-from sk import sr_key
+from other.sk import sr_key
 
 ## Set the api key
 openai.api_key = sr_key
 
 if __name__ == '__main__':
     ## Read the URLs from the file
-    urls = InputOutput.read_urls('testurls.txt')
+    urls = InputOutput.read_urls('other/urls.txt')
 
     ## initialize counter for file naming
     counter = 1
@@ -55,9 +55,6 @@ if __name__ == '__main__':
 
         ## Seperate the summary from other returned data
         reply = chat.choices[0].message.content 
-
-        print(title)
-        print(f"ChatGPT: {reply}") 
 
         ## Add new lines for readibility
         formatted_reply = FormatData.add_newlines(reply)
