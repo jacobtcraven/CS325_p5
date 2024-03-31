@@ -74,7 +74,14 @@ After setting up the environment, you can run the program using the following co
 
    b. In this example "content" is defined as "You are a intelligent assistant." Depending on the specified role, "content" can contain a behavior or prompt for the API.
 
-8. Create an implementation of the API such as used in this project:
+8. Append a dictionary to list that contains the desired role and content. An example is:
+    ```
+    messages.append( 
+            {"role": "user", "content": message}, 
+        ) 
+    ```
+
+9. Create an implementation of the API such as used in this project:
     ```
     messages = [ {"role": "system", "content": 
                 "You are a intelligent assistant."} ] 
@@ -108,7 +115,7 @@ After setting up the environment, you can run the program using the following co
 
    b. The line `reply = chat.choices[0].message.content` extracts the reply from a set of data returned by the API.
 
-9. Test and customize as you please!
+10. Test and customize as you please!
 
 ## File Description:  
 __run.py__: This is the main Python script that performs the web scraping task. First it reads a list of URLs from a text file, scrapes the content of each URL using requests and beautifulsoup4, formats the content by adding a newline every 20 words. The raw and formatted data are written to seperate files before the article contents are sent to the OpenAI API to be summarized. The reply containing the summarized article is placed into a file corresponding to its article. 
