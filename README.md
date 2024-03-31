@@ -138,6 +138,8 @@ __urls.txt__: This file contains the five URLs that will be scraped in main.py.
 
 __sk.py__: This file contains the API key to be used with OpenAI's API.
 
+__requirements.yml__: This file contains the conda environment to run the program.
+
 ------------------------------------------------------------------------------------------------------------
 
 ### Other important information
