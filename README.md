@@ -65,14 +65,14 @@ messages = [ {"role": "system", "content":
 			"You are a intelligent assistant."} ] 
 ```
     
-    a. In this example, "role" is defined as "system" but three different values can be used instead of "system".
-        I. *system*: This sets up how the API should interact
-        
-        II. *user*: This acts as a message to the API for it to respond.
+a. In this example, "role" is defined as "system" but three different values can be used instead of "system".
+    I. *system*: This sets up how the API should interact
+    
+    II. *user*: This acts as a message to the API for it to respond.
 
-        III. *assistant*: This also acts as a message, but typically is used in instances when previous prompts and answers are to be remembered.
+    III. *assistant*: This also acts as a message, but typically is used in instances when previous prompts and answers are to be remembered.
 
-    b. In this example "content" is defined as "You are a intelligent assistant." Depending on the specified role, "content" can contain a behavior or prompt for the API.
+b. In this example "content" is defined as "You are a intelligent assistant." Depending on the specified role, "content" can contain a behavior or prompt for the API.
 
 8. Create an implementation of the API such as used in this project:
 ```
@@ -97,14 +97,16 @@ messages = [ {"role": "system", "content":
 ```
     
 a. The lines 
-    ```
-    chat = openai.ChatCompletion.create( 
-            model="gpt-3.5-turbo", messages=messages 
-        ) 
-    ```
-    sends the prompt and stores it in a variable "chat"
 
-    a. The line `reply = chat.choices[0].message.content` extracts the reply from a set of data returned by the API.
+```
+chat = openai.ChatCompletion.create( 
+        model="gpt-3.5-turbo", messages=messages 
+    ) 
+```
+
+sends the prompt and stores it in a variable "chat"
+
+a. The line `reply = chat.choices[0].message.content` extracts the reply from a set of data returned by the API.
 
 9. Test and customize as you please!
 
