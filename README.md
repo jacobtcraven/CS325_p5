@@ -36,9 +36,9 @@ Follow these steps to set up a new Conda environment and run the program:
 
 ## Running the Program:
 After setting up the environment, you can run the program using the following command:  
-```
-python3 run.py
-```
+    ```
+    python3 run.py
+    ```
 
 ## How to create a LLM API:
 1. Create an OpenAI account at www.openai.com
@@ -53,59 +53,59 @@ python3 run.py
 5. Define a string variable that contains your API key
 
 6. Connect API key to openAI agent with this code block:
-```
-openai.api_key = sr_key
-```
+    ```
+    openai.api_key = sr_key
+    ```
     
-    a. replace "sr_key" with whatever you named your API key string variable.
+   a. replace "sr_key" with whatever you named your API key string variable.
 
 7. Determine how you will implement the API and then start by creating a list of dictionaries such as:
-```
-messages = [ {"role": "system", "content": 
-			"You are a intelligent assistant."} ] 
-```
-a. In this example, "role" is defined as "system" but three different values can be used instead of "system".
-I. *system*: This sets up how the API should interact
+    ```
+    messages = [ {"role": "system", "content": 
+                "You are a intelligent assistant."} ] 
+    ```
+   a. In this example, "role" is defined as "system" but three different values can be used instead of "system".
+      I. *system*: This sets up how the API should interact
 
-II. *user*: This acts as a message to the API for it to respond.
+      II. *user*: This acts as a message to the API for it to respond.
 
-III. *assistant*: This also acts as a message, but typically is used in instances when previous prompts and answers are to be remembered.
+      III. *assistant*: This also acts as a message, but typically is used in instances when previous prompts and answers are to be remembered.
 
-b. In this example "content" is defined as "You are a intelligent assistant." Depending on the specified role, "content" can contain a behavior or prompt for the API.
+   b. In this example "content" is defined as "You are a intelligent assistant." Depending on the specified role, "content" can contain a behavior or prompt for the API.
 
 8. Create an implementation of the API such as used in this project:
-```
-messages = [ {"role": "system", "content": 
-			"You are a intelligent assistant."} ] 
-        
-        ## Prompt to summarize article
-        message = f"Make this article concise in under 50 words\n {formatted}" 
-        
-        ## Append user message to messages list so api can access it
-        messages.append( 
-            {"role": "user", "content": message}, 
-        ) 
+    ```
+    messages = [ {"role": "system", "content": 
+                "You are a intelligent assistant."} ] 
+            
+            ## Prompt to summarize article
+            message = f"Make this article concise in under 50 words\n {formatted}" 
+            
+            ## Append user message to messages list so api can access it
+            messages.append( 
+                {"role": "user", "content": message}, 
+            ) 
 
-        ## Send the prompt to the api
-        chat = openai.ChatCompletion.create( 
+            ## Send the prompt to the api
+            chat = openai.ChatCompletion.create( 
+                model="gpt-3.5-turbo", messages=messages 
+            ) 
+
+            ## Seperate the summary from other returned data
+            reply = chat.choices[0].message.content 
+    ```
+    
+   a. The lines 
+
+    ```
+    chat = openai.ChatCompletion.create( 
             model="gpt-3.5-turbo", messages=messages 
         ) 
-
-        ## Seperate the summary from other returned data
-        reply = chat.choices[0].message.content 
-```
-    
-a. The lines 
-
-```
-chat = openai.ChatCompletion.create( 
-        model="gpt-3.5-turbo", messages=messages 
-    ) 
-```
+    ```
 
 sends the prompt and stores it in a variable "chat"
 
-b. The line `reply = chat.choices[0].message.content` extracts the reply from a set of data returned by the API.
+   b. The line `reply = chat.choices[0].message.content` extracts the reply from a set of data returned by the API.
 
 9. Test and customize as you please!
 
