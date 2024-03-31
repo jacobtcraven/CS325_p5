@@ -65,11 +65,12 @@ After setting up the environment, you can run the program using the following co
                 "You are a intelligent assistant."} ] 
     ```
    a. In this example, "role" is defined as "system" but three different values can be used instead of "system".
-      I. *system*: This sets up how the API should interact
+      
+      *system*: This sets up how the API should interact
 
-      II. *user*: This acts as a message to the API for it to respond.
+      *user*: This acts as a message to the API for it to respond.
 
-      III. *assistant*: This also acts as a message, but typically is used in instances when previous prompts and answers are to be remembered.
+      *assistant*: This also acts as a message, but typically is used in instances when previous prompts and answers are to be remembered.
 
    b. In this example "content" is defined as "You are a intelligent assistant." Depending on the specified role, "content" can contain a behavior or prompt for the API.
 
@@ -103,7 +104,7 @@ After setting up the environment, you can run the program using the following co
         ) 
     ```
 
-sends the prompt and stores it in a variable "chat"
+   sends the prompt and stores it in a variable "chat"
 
    b. The line `reply = chat.choices[0].message.content` extracts the reply from a set of data returned by the API.
 
