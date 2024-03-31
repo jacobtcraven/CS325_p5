@@ -74,7 +74,7 @@ After setting up the environment, you can run the program using the following co
 
    b. In this example "content" is defined as "You are a intelligent assistant." Depending on the specified role, "content" can contain a behavior or prompt for the API.
 
-8. Append a dictionary to list that contains the desired role and content. An example is:
+8. Append to the list a dictionary that contains the desired role and content. An example is:
     ```
     messages.append( 
             {"role": "user", "content": message}, 
