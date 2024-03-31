@@ -1,16 +1,16 @@
-__Web Scraping Project__  
+# Web Scraping Project  
 This project contains a Python script main.py that scrapes information from a list of sports news articles and writes the content of each article to a separate text file.
 
 
-__Getting Started:__  
+## Getting Started:  
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
 
-__Prerequisites:__  
+## Prerequisites:  
 The project requires Python and Conda to be installed on your machine.
 
 
-__Installing:__  
+## Installing:  
 Follow these steps to set up a new Conda environment and run the program:
 
 1. Open your terminal.
