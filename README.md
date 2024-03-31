@@ -115,11 +115,11 @@ __run.py__: This is the main Python script that performs the web scraping task. 
 
 __Data__: This folder contains three folders for raw, processed and summarized data.
 
-    __Raw__: This folder contains the raw data scraped from the news articles, including html tags
+   __Raw__: This folder contains the raw data scraped from the news articles, including html tags
 
-    __Processed__: This folder contains the full text of the scraped articles without any html tags.
+   __Processed__: This folder contains the full text of the scraped articles without any html tags.
 
-    __Summarized__: This folder contains the titles and summaries of each article in under 50 words.
+   __Summarized__: This folder contains the titles and summaries of each article in under 50 words.
 
 __Module_1__: This folder contains the __RawData.py__ file which contains the functions to scrape the raw data from a website.
 
@@ -128,6 +128,7 @@ __Module_2__: This folder contains the __FormatData.py__ file which contains the
 __urls.txt__: This file contains the five URLs that will be scraped in main.py.
 
 __key.txt__: This file contains the API key to be used with OpenAI's API.
+
 ------------------------------------------------------------------------------------------------------------
 
 ### Other important information
