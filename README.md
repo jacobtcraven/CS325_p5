@@ -96,7 +96,7 @@ messages = [ {"role": "system", "content":
         reply = chat.choices[0].message.content 
 ```
     
-    a. The lines 
+a. The lines 
     ```
     chat = openai.ChatCompletion.create( 
             model="gpt-3.5-turbo", messages=messages 
