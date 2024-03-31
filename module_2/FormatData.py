@@ -6,6 +6,10 @@ from bs4 import BeautifulSoup
 
 
 class FormatData:
+    def get_title(raw):
+        text = raw.find("title")
+        return text.get_text()
+
     ## Removes the html tags from the raw data
     def remove_html(raw):
         text = raw.find("div", class_='caas-body')

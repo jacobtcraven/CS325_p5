@@ -4,9 +4,11 @@
 from module_1.RawData import RawData, InputOutput
 from module_2.FormatData import FormatData
 
+## Import openai and api key
 import openai
 from sk import sr_key
 
+## Set the api key
 openai.api_key = sr_key
 
 if __name__ == '__main__':
@@ -23,6 +25,9 @@ if __name__ == '__main__':
 
         ## Write html to raw file
         InputOutput.write_to_file(str(source), f'Data/raw/raw{counter}.txt')
+
+        ## Get the title of the article
+        title = FormatData.get_title(source)
 
         ## Format the raw file
         formatted = FormatData.remove_html(source)
@@ -51,13 +56,17 @@ if __name__ == '__main__':
         ## Seperate the summary from other returned data
         reply = chat.choices[0].message.content 
 
+        print(title)
         print(f"ChatGPT: {reply}") 
 
         ## Add new lines for readibility
         formatted_reply = FormatData.add_newlines(reply)
 
+        ## Combine title with formatted summary of article
+        summary = title + '\n' + formatted_reply
+
         ## Write summary to file
-        InputOutput.write_to_file(formatted_reply, f'Data/summarized/summarized{counter}.txt')
+        InputOutput.write_to_file(summary, f'Data/summarized/summarized{counter}.txt')
 
         ## Increment counter so next url can be scraped and written to a new file
         counter += 1
