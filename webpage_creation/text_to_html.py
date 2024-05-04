@@ -40,8 +40,8 @@ def txt_to_html(txt_file, html_file):
     tree.write(f, encoding='utf-8')
 
 
-txt_file = "my_text.txt"
-html_file = "all_news_articles.html"
+txt_file = "./webpage_creation/my_text.txt"
+html_file = "./webpage_creation/all_news_articles.html"
 txt_to_html(txt_file, html_file)
 
 print(f"Converted text file '{txt_file}' to HTML file '{html_file}'.")

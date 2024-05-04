@@ -1,2 +1,2 @@
 ## API Key
-sr_key = ''
+sr_key = 'sk-'

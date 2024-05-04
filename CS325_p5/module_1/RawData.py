@@ -30,3 +30,18 @@ class InputOutput:
         ##Write the article to a .txt file
         with open(filename, 'w', encoding='utf-8') as file:
             file.write(article)
+
+    def clear_contents(filename):
+        ## Clear the contents of a file
+        with open(filename, 'w') as file:
+            file.write('')
+    
+    def append_article_to_file(article, filename):
+        ## Append the article to a .txt file
+        with open(filename, 'a') as file:
+            file.write(article + '\n\n')
+
+    def append_title_to_file(title, filename):
+        ## Append the title to a .txt file
+        with open(filename, 'a') as file:
+            file.write(title)
