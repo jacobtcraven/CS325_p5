@@ -13,7 +13,7 @@ openai.api_key = sr_key
 
 if __name__ == '__main__':
     ## Read the URLs from the file
-    urls = InputOutput.read_urls('other/urls.txt')
+    urls = InputOutput.read_urls('CS325_p5/other/urls.txt')
 
     ## initialize counter for file naming
     counter = 1
@@ -24,7 +24,7 @@ if __name__ == '__main__':
         source = RawData.scrape(URL)
 
         ## Write html to raw file
-        InputOutput.write_to_file(str(source), f'Data/raw/raw{counter}.txt')
+        InputOutput.write_to_file(str(source), f'CS325_p5/Data/raw/raw{counter}.txt')
 
         ## Get the title of the article
         title = FormatData.get_title(source)
@@ -34,7 +34,7 @@ if __name__ == '__main__':
         formatted = FormatData.add_newlines(formatted)
 
         ## Write the formatted file
-        InputOutput.write_to_file(formatted, f'Data/processed/formatted{counter}.txt')
+        InputOutput.write_to_file(formatted, f'CS325_p5/Data/processed/formatted{counter}.txt')
         
         ## Reset the messages variable so previous prompts aren't remembered
         messages = [ {"role": "system", "content": 
@@ -63,7 +63,7 @@ if __name__ == '__main__':
         summary = title + '\n' + formatted_reply
 
         ## Write summary to file
-        InputOutput.write_to_file(summary, f'Data/summarized/summarized{counter}.txt')
+        InputOutput.write_to_file(summary, f'CS325_p5/Data/summarized/summarized{counter}.txt')
 
         ## Increment counter so next url can be scraped and written to a new file
         counter += 1
