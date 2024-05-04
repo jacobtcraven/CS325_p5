@@ -22,7 +22,6 @@ if __name__ == '__main__':
     InputOutput.clear_contents('./webpage_creation/my_text.txt')
 
     ## For each url, scrape the raw data, format it, and write it to a file
-    # for URL in urls:
     for URL in urls:
         source = RawData.scrape(URL)
 
@@ -31,9 +30,6 @@ if __name__ == '__main__':
 
         ## Get the title of the article
         title = FormatData.get_title(source)
-
-        ## Append the title to the .txt file for all news articles
-        InputOutput.append_title_to_file(title, './webpage_creation/my_text.txt')
 
         ## Format the raw file
         formatted = FormatData.remove_html(source)
@@ -62,19 +58,14 @@ if __name__ == '__main__':
         ## Seperate the summary from other returned data
         reply = chat.choices[0].message.content 
 
-        ## Add new lines for readibility
-        formatted_reply = FormatData.add_newlines(reply)
-
-        ## Append current aritcle to .txt file for all news articles
-        InputOutput.append_article_to_file(formatted_reply, './webpage_creation/my_text.txt')
-
         ## Combine title with formatted summary of article
-        summary = title + '\n' + formatted_reply
+        summary = title + '\n' + reply
 
         ## Write summary to file
         InputOutput.write_to_file(summary, f'CS325_p5/Data/summarized/summarized{counter}.txt')
 
-
+        ## Append current aritcle to .txt file for all news articles
+        InputOutput.append_article_to_file(summary, './webpage_creation/my_text.txt')
 
         ## Increment counter so next url can be scraped and written to a new file
         counter += 1

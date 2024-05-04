@@ -1,2 +1,2 @@
 ## API Key
-sr_key = 'sk-proj-'
+sr_key = ''

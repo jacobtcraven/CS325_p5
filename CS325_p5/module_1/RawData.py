@@ -43,5 +43,5 @@ class InputOutput:
 
     def append_title_to_file(title, filename):
         ## Append the title to a .txt file
-        with open(filename, 'a') as file:
+        with open(filename, 'a', encoding='utf-8') as file:
             file.write(title)
